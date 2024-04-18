@@ -1,0 +1,53 @@
+version: '3'
+
+volumes:
+    mariadb_dev:
+
+services:
+    db:
+        container_name: db
+        image: "mariadb:latest"
+        ports:
+         - "3307:3306"
+        volumes:
+         - mariadb_dev:/var/lib/mysql
+        environment:
+         MYSQL_ROOT_PASSWORD: dkimsmu
+        restart: always
+        networks:
+        - backend
+    flask:
+        container_name: flask
+        image: "n_flask:latest"
+        ports:
+        - "5000:5000"
+        networks:
+        - backend
+        volumes:
+        - ./flask:/flask
+        depends_on:
+        - db
+        links:
+        - db
+
+    react:
+        container_name : reacts
+        image : "reacts:latest"
+        ports :
+         - "3001:3000"
+        networks:
+         - backend
+        volumes:
+         - "./react/power_map_v1:/app"
+         - "/app/node_modules"
+        depends_on:
+         - flask
+        links:
+         - flask
+        environment:
+         - NODE_ENV=development
+         - CHOKIDAR_USEPOLLING=true
+networks:
+    backend:
+        driver: bridge
+
