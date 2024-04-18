@@ -16,11 +16,11 @@ React 기반 전력수요 예측 모니터링 웹 시스템 개발
 
 System Architecture
 
-<img src="figure/README/%EA%B8%80%EC%94%A8%EC%B2%B4%EB%B3%80%EA%B2%BD.png" alt="글씨체변경" style="zoom:50%;" align="left" />
+<img src="figure/README/%EA%B8%80%EC%94%A8%EC%B2%B4%EB%B3%80%EA%B2%BD.png" alt="글씨체변경" style="zoom:50%;"/>
 
 
 
 Result Page
 
-<img src="figure/README/graph_marker.png" alt="graph_marker" style="zoom:50%;" align="left"/>
+<img src="figure/README/graph_marker.png" alt="graph_marker" style="zoom:50%;"/>
 
